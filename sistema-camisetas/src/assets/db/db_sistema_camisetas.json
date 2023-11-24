@@ -1,0 +1,150 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "name": "typicode"
+    },
+    {
+      "name": "juan"
+    }
+  ],
+  "camisetas": [
+    {
+      "nombre": "camiseta blanca basica",
+      "silueta": "C:\\fakepath\\1.png",
+      "categoria": "",
+      "strock": "13",
+      "color": "#ffffff",
+      "talla": "L",
+      "id": 1
+    },
+    {
+      "nombre": "camiseta azul",
+      "silueta": "C:\\fakepath\\3.png",
+      "categoria": "mujer",
+      "strock": "10",
+      "color": "#2b00ff",
+      "talla": "XL",
+      "id": 2
+    },
+    {
+      "nombre": "camiseta verde básica",
+      "silueta": "C:\\fakepath\\hero_img.jpg",
+      "categoria": "mujer",
+      "strock": "12",
+      "color": "",
+      "talla": "L",
+      "precio": "20000",
+      "id": 3
+    },
+    {
+      "nombre": "camiseta mora básica",
+      "silueta": "C:\\fakepath\\3.png",
+      "categoria": "mujer",
+      "strock": "20",
+      "color": "#4b00fa",
+      "talla": "M",
+      "precio": "20000",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "email": "juan@gmail.com",
+      "contraseña": "",
+      "person": {
+        "numero_documento": "1001",
+        "tipo_documento": "",
+        "nombre": "juan",
+        "apellido": "rodriguez",
+        "celular": "12345",
+        "direccion": "mi casa"
+      },
+      "rol": "user",
+      "id": 1
+    },
+    {
+      "email": "pedro@gmail.com",
+      "contraseña": "",
+      "person": {
+        "numero_documento": "2002",
+        "tipo_documento": "",
+        "nombre": "pedro",
+        "apellido": "perez",
+        "celular": "12345",
+        "direccion": "mi casa"
+      },
+      "rol": "admin",
+      "id": 2
+    },
+    {
+      "email": "pedro@gmail.com",
+      "contraseña": "",
+      "person": {
+        "numero_documento": "4004",
+        "tipo_documento": "",
+        "nombre": "Pedro",
+        "apellido": "Castillo",
+        "celular": "987",
+        "direccion": "casa de pedro"
+      },
+      "rol": "user",
+      "id": 3
+    },
+    {
+      "email": "pedro2@gmail.com",
+      "contraseña": "",
+      "person": {
+        "numero_documento": "4004",
+        "tipo_documento": "",
+        "nombre": "Pedro",
+        "apellido": "Acosta",
+        "celular": "987",
+        "direccion": "casa de pedro"
+      },
+      "rol": "user",
+      "id": 4
+    },
+    {
+      "email": "pepito@gmail.com",
+      "contraseña": "",
+      "person": {
+        "numero_documento": "6006",
+        "tipo_documento": "",
+        "nombre": "pepito",
+        "apellido": "chavez",
+        "celular": "678",
+        "direccion": "casa de pepito"
+      },
+      "rol": "user",
+      "id": 5
+    },
+    {
+      "email": "santiago@gmail.com",
+      "contraseña": "",
+      "person": {
+        "numero_documento": "6006",
+        "tipo_documento": "",
+        "nombre": "Santiago",
+        "apellido": "salazar",
+        "celular": "12345678",
+        "direccion": "casa de santiago"
+      },
+      "rol": "user",
+      "id": 6
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+.user {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+}
+
+.user-info {
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f7551c9;
+    width: 70%;
+
+}
+
+.user-info img {
+    height: 30%;
+    width: 20%;
+    margin-bottom: 50px;
+    border-radius: 90% 90%;
+
+}
+
+.user-info ul {
+    list-style: none;
+    font-size: 25px;
+    margin-right: 45px;
+    color: white;
+    font-weight: 300;
+
+}
+
+.user-info button {
+
+    margin-top: 40px;
+    padding: 5px;
+    font-size: 18px;
+    width: 20%;
+    font-weight: 600;
+    ;
+    border-radius: 10%;
+
+}
+
+

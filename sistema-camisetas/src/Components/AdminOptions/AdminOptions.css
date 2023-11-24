@@ -1,0 +1,25 @@
+.admin-options {
+    width: 30%;
+
+}
+
+.admin-options ul {
+    list-style: none;
+
+}
+
+.admin-options li {
+    width: 100%;
+    padding: 5px;
+    height: 15%;
+    margin: 0;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+}
+
+.admin-options li:hover {
+    background-color: #aafad9c9;
+    cursor: pointer;
+
+}

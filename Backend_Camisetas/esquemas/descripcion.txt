@@ -1,0 +1,2 @@
+En esta carpeta se encuentran los datos que se reciben y se 
+muestran al cliente en general especifica los tipos de datos

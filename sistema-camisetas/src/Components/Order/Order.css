@@ -1,0 +1,18 @@
+.order{
+    display: flex;
+    flex-flow: row nowrap;
+    height: 150px;
+    width: 50vw;
+    background-color:white ;
+    margin-top: 20px;
+
+    
+    
+}
+.product-data ul li, .order-data ul li{
+   list-style: none;
+}
+
+.order-data{
+    margin-left: 10px;
+}

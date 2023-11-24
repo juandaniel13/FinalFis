@@ -1,0 +1,2 @@
+En esta carpeta se almacenan los modelos de datos que 
+reflejan como estos seran guarados en la base de datos

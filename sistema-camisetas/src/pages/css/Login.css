@@ -1,0 +1,67 @@
+.Login{
+    width: 100%;
+    height: 110vh;
+    background-color:#0c8251c9;
+    padding-top: 100px;
+}
+
+
+.Login-container{
+    width: 46%;
+    height: 80%;
+    background: white;
+    margin: 0 auto;
+    padding: 2.5rem 4rem;
+    display:  flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.Login-container h2{
+    margin: 1rem 0rem;
+    
+}
+
+.Login-fields{
+    gap: 29px;
+    margin-top: 1rem;
+}
+
+.Login-fields input{
+    height: 4.5rem;
+    width: 100%;
+    padding-left: 1.2rem;
+    border: medium solid rgb(255, 251, 244);
+    outline: none;
+    color: gray;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.Login-container .btn-submit{
+  
+    color: white  ;
+    background: #017254;
+    margin-top: 1rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    
+}
+.create-acount{
+   
+    margin-top: 20px;
+    color: black;
+    font-size: 1.2rem;
+    font-weight:500 ;
+}
+
+.Login-login a{
+    color: rgb(9, 59, 153);
+    font-weight: 600;
+}
+

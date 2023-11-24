@@ -1,0 +1,35 @@
+.manage-products {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+}
+.edit-products{
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: center;
+    background-color: #F4FFFB;
+    width: 70%;   
+}
+
+.cargar-producto{
+    margin-top: 20px;
+}
+.cargar-producto form{
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+
+.cargar-producto form input{
+    padding: 5px;
+    font-size: 15px;
+    
+}
+.cargar-producto form .btn-agregar{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #1f7551c9;;
+    
+}

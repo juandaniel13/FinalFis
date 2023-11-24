@@ -1,0 +1,21 @@
+.user-purchases {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+}
+.order-history{
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: center;
+    background-color: #F4FFFB;
+    width: 70%;
+    
+    
+}
+
+.order-history-content{
+    height: 70%;
+    overflow-y: scroll;
+}
