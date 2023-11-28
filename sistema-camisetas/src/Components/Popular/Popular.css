@@ -5,6 +5,7 @@
     align-items: center;
     gap: 10px;
     height: 70vh;
+    max-width: 97%;
 }
 
 .popular h1{
@@ -24,4 +25,9 @@
     margin-top: 50px;
     display: flex;
     gap: 30px;
+    height: 100%;
+    max-width: 100vw;
+    overflow-x: scroll;
+    
+    
 }

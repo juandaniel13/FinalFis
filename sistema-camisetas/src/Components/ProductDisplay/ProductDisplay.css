@@ -1,6 +1,8 @@
 .product-display {
     display: flex;
     margin: 0px 170px;
+   /*  max-height: 100%; */
+    
 }
 
 .product-display-left {
@@ -12,7 +14,7 @@
     height: 163px;
 }
 
-.product-display-main-img {
+#product-display-main-img {
     width: 586px;
     height: 700px;
 

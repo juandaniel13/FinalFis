@@ -1,11 +1,43 @@
 import React, { createContext, useEffect, useState } from "react";
-import { data_product as all_products } from "../Components/assets/nav_bar_media/data";
+import axios from "axios";
+
 
 export const ShopContext = createContext();
 
 
 
 const ShopContextProvider = (props) => {
+  /* all products */
+  const [allProducts, setAllProducts] = useState([])
+  const handdleGetProducts = async (e) => {
+    /* e.preventDefault(); */
+
+    try {
+      const res = await axios.get("http://localhost:3000/camisetas");
+
+      console.log("respuesta de axios", res);
+
+      if (res.status >= 200 && res.status < 300) {
+        console.log(res.data);
+        setAllProducts(res.data);
+        console.log("Todo bien todo correcto");
+      } else {
+        console.log("Hubo un problema con la solicitud");
+        // Puedes manejar errores o realizar acciones adicionales en caso de error
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+      // Puedes manejar errores de red u otros errores aquí
+    }
+  };
+  
+  useEffect(() => {
+    // Este código se ejecutará después de que el componente se monte
+    handdleGetProducts()
+  }, []);
+
+
+
   /* Cart */
   const [cartItems, setCartItems] = useState([]);
 
@@ -55,7 +87,7 @@ const ShopContextProvider = (props) => {
         return updatedCart;
       });
     }
-    console.log(cartItems);
+    console.log("productos del carrito",cartItems);
   };
   
 
@@ -65,6 +97,7 @@ const ShopContextProvider = (props) => {
         const updatedCart = [...prev];
         const itemIndex = getCartItem(itemId, size);
   
+       /* if( updatedCart[itemIndex].quantity == 0){ */
         if (itemIndex !== false) {
           // El artículo existe en el carrito, actualiza la cantidad
           updatedCart[itemIndex] = {
@@ -72,6 +105,7 @@ const ShopContextProvider = (props) => {
             quantity: Math.max(0, updatedCart[itemIndex].quantity - 1),
           };
         }
+  /*      } */
   
         return updatedCart;
       });
@@ -80,7 +114,7 @@ const ShopContextProvider = (props) => {
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     cartItems.forEach((el)=>{
-        totalAmount  += el.product.newPrice * el.quantity
+        totalAmount  += el.product.precio * el.quantity
     })
     return totalAmount;
 };
@@ -97,13 +131,57 @@ const ShopContextProvider = (props) => {
     return totalItem;
   };
 
+  const getTotalCartAmountFax = (fax) => {
+    let totalAmount = 0;
+    cartItems.forEach((el)=>{
+        totalAmount  += (el.product.precio + (el.product.precio * (fax/100)) )* el.quantity
+    })
+    return totalAmount;
+};
+
+
+
+
   const [account, setAccount] =useState({login:false,user:{}})
+  const [product, setProduct] = useState({});
+  const [tag, setTag] = useState({});
+  const [desing, setDesing] = useState({})
+
+  localStorage.setItem("juan", account.login)
+  /* localStorage.getItem() */
+  console.log("prueba xd", account);
+
 
 
   /* User Login */
+  const [token, setToken] = useState(localStorage.getItem("awesomeLeadsToken"));
+
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const requestOptions = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      };
+
+      const response = await fetch("http://localhost:3000/users", requestOptions);
+
+      if (!response.ok) {
+        setToken(null);
+      }
+      localStorage.setItem("awesomeLeadsToken", token);
+    };
+    fetchUser();
+  }, [token]);
+
+
+
 
   const contextValue = {
-    all_products,
+    allProducts,
     cartItems,
     addToCart,
     removeFromCart,
@@ -111,6 +189,16 @@ const ShopContextProvider = (props) => {
     getTotalCartItems,
     account,
     setAccount,
+    product,
+    setProduct,
+    tag,
+    setTag,
+    desing,
+    setDesing, 
+    getTotalCartAmountFax,
+    token,
+    setToken,
+    
     
 
   };

@@ -1,0 +1,22 @@
+.update-shirt{
+    margin-top: 20px;
+   
+}
+.update-shirt form{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+
+.update-shirt form input{
+    padding: 5px;
+    font-size: 15px;
+    
+}
+.update-shirt form .btn-agregar{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #1f7551c9;;
+    
+}

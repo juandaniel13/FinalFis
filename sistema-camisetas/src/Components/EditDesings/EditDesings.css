@@ -1,0 +1,24 @@
+.get-desings{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column;
+}
+
+.search-bar{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+.search-bar input{
+    width: 80% ;
+}
+
+.desing-data ul{
+    list-style: none;
+}
+
+.desing{
+    margin-top: 10px;
+    border: thin solid black;
+    padding: 3px;
+}

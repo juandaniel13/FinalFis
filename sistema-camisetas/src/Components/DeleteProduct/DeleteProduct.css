@@ -1,0 +1,22 @@
+
+.delete-product{
+    margin-top: 20px;
+}
+.delete-product form{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+
+.delete-product form input{
+    padding: 5px;
+    font-size: 15px;
+    
+}
+.delete-product form .btn-agregar{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #1f7551c9;;
+    
+}

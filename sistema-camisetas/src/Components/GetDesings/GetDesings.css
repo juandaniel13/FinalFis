@@ -1,0 +1,35 @@
+.get-desings{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column;
+    margin-left: 15px;
+}
+
+.search-bar{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+.search-bar input{
+    width: 80% ;
+}
+
+.desing-data ul{
+    list-style: none;
+}
+.desings-list{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.desing{
+    margin-top: 10px;
+    border: thin solid black;
+    padding: 3px;
+    height: 150px;
+    display: flex;
+    flex-flow: column wrap;
+}
+.desing img{
+    height: 100%;
+}

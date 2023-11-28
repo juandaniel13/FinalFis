@@ -1,0 +1,21 @@
+
+.upload-tag{
+    margin-top: 20px;
+}
+.upload-tag form{
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+
+.upload-tag form input{
+    padding: 5px;
+    font-size: 15px;
+    
+}
+.upload-tag form .btn-agregar{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #1f7551c9;;
+    
+}

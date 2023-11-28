@@ -1,0 +1,15 @@
+.manage-desings {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.edit-desings{
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
+    background-color: #F4FFFB;
+    width: 70%;   
+}

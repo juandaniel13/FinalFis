@@ -2,34 +2,41 @@
     display: flex;
     flex-flow: column wrap;
     height: 100vh;
+    overflow-y: scroll;
 }
 .edit-products{
     height: 100%;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     justify-content: start;
     align-items: center;
     background-color: #F4FFFB;
     width: 70%;   
 }
-
-.cargar-producto{
-    margin-top: 20px;
+.product-manager-menu{
+  
 }
-.cargar-producto form{
+.product-manager-menu-content{
+    margin-top: 15px;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+    list-style: none;
+    border: thin solid black;
+    padding: 0;
+
     
 }
 
-.cargar-producto form input{
+.product-manager-menu-content li {
+    margin-left: 4px;
     padding: 5px;
-    font-size: 15px;
-    
+  
 }
-.cargar-producto form .btn-agregar{
-    margin-top: 10px;
-    width: 100%;
-    background-color: #1f7551c9;;
-    
+
+
+.product-manager-menu-content li:hover {
+    background-color: #aafad9c9;
+    cursor: pointer;
+
 }
+

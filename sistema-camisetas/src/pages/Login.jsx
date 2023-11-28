@@ -44,6 +44,7 @@ function Login() {
         console.log("Todo bien todo correcto");
         if(data.rol == "admin"){
           setIsAdmin(true)
+          
         }
         console.log(data);
         setAccount({
@@ -56,6 +57,7 @@ function Login() {
           },
           
         });
+        localStorage.setItem(account)
         setRedirect(true)
         console.log(account);
 

@@ -14,6 +14,9 @@ import User from "./pages/User";
 import UserPurchases from "./pages/UserPurchases";
 import Admin from "./pages/Admin";
 import ManageProducts from "./pages/ManageProducts";
+import Tags from "./pages/Tags";
+import ManageDesings from "./pages/ManageDesings";
+import CustomProduct from "./pages/CustomProduct";
 
 
 
@@ -41,8 +44,11 @@ function App() {
           <Route path="/UserPurchases" element={<UserPurchases/>}/>
           <Route path="/Admin" element={<Admin/>}/>
           <Route path="/ManageProducts" element={<ManageProducts/>}/>
+          <Route path="/tags" element={<Tags/>}/>
+          <Route path="/ManageDesings"element={<ManageDesings/>}/>
+          <Route path="/CustomProduct" element={<CustomProduct/>}/>
         </Routes> 
-        <Footer/>
+       { <Footer/>}
       </BrowserRouter>
     </div>
   );

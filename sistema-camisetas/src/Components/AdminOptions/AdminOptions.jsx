@@ -8,8 +8,8 @@ function AdminOptions() {
     <div className="admin-options">
         <ul>
           <Link to="/Admin"><li>Información del Administrador</li></Link>
-          <li>Gestionar Categorias</li>
-          <li>Gestionar Estampados</li>
+          <Link to="/tags"><li>Gestionar Categorias</li></Link>
+          <Link to="/ManageDesings"><li>Gestionar Estampados</li></Link>
           <Link to="/ManageProducts"><li>Gestionar Productos</li></Link>
           <li>Gestionar Usuarios</li>
           <li>Gestionar Solicitudes</li>

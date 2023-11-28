@@ -5,7 +5,7 @@ function Breadcrum(props) {
   const { product } = props;
   return (
     <div className="breadcrum">
-     { `HOME > SHOP > ${product.category} > ${product.name}`}
+     { `HOME > SHOP > ${product.categoria} > ${product.nombre}`}
     </div>
   );
 }

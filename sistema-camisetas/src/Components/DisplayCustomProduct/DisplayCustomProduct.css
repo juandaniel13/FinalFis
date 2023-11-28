@@ -1,0 +1,28 @@
+.display-custom-product{
+    display: flex;
+    flex-flow: column wrap;
+    height: 80vh;
+    width: 30%;
+    margin-left: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.desing-img{
+    background-color: transparent;
+    height: 220px;
+    width: 180px;
+}

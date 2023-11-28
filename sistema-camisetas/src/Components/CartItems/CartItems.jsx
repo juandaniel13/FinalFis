@@ -3,8 +3,10 @@ import "./CartItems.css";
 import { ShopContext } from "../../Context/ShopContext";
 
 function CartItems() {
-  const { all_products, cartItems, removeFromCart,getTotalCartAmount ,account } = useContext(ShopContext);
+  const { all_products, cartItems, removeFromCart,getTotalCartAmount ,account,getTotalCartAmountFax } = useContext(ShopContext);
 
+
+  
   const handdlePay =()=>{
     if(account.login == false){
       alert("Primero debe iniciar sesión")
@@ -31,12 +33,12 @@ function CartItems() {
           return (
             <div>
               <div className="cart-items-format cart-items-format-main">
-                {/*                 <img  className="cart-icon-product-icon" src="" alt="" /> */}
-               <img  className="cart-icon-product-icon" src={el.product.image} alt="" />
-                <p>{el.product.name}</p>
-                <p>${el.product.newPrice}</p>
+              {/* <img  className="cart-icon-product-icon" src="" alt="" /> */}
+               <img  className="cart-icon-product-icon" src={el.product.silueta} alt="" />
+                <p>{el.product.nombre}</p>
+                <p>${el.product.precio}</p>
                 <button className="cart-items-quantity">{el.quantity}</button>
-                <p>${el.product.newPrice*el.quantity}</p>
+                <p>${el.product.precio*el.quantity}</p>
                 {/* insert image */}
                 <span className="cart-items-remove-icon" onClick={() => {removeFromCart(el.id,el.size);}}>✖</span>
               </div>
@@ -63,6 +65,8 @@ function CartItems() {
                 <div className="cart-items-total-item">
                     <h3>Total</h3>
                     <h3>${getTotalCartAmount()}</h3>
+                    <h3>Total + Impouesto IVA del 19&</h3>
+                    <h3>${getTotalCartAmountFax(19)}</h3>
                 </div>
             </div>
             <button onClick={handdlePay}>Realizar Pago</button>

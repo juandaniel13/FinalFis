@@ -1,0 +1,25 @@
+.custom-product{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    
+}
+
+.add-to-cart{
+    margin-top: 15px;
+}
+
+.btn-add-to-cart {
+    padding: 20px 40px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: red;
+    margin-bottom: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+
+}

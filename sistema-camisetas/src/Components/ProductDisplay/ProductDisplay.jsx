@@ -1,43 +1,47 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./ProductDisplay.css";
 import { ShopContext } from "../../Context/ShopContext";
+
 function ProductDisplay(props) {
-  const { product } = props;
+  
+  let { product } = props;
+
+  console.log("este es el producto", product);
+  /* let product = localStorage.getItem("selectedShirt") */
   const { addToCart } = useContext(ShopContext);
   const [isAddToCartDisabled, setAddToCartDisabled] = useState(true);
   const [size, setSize] = useState("");
 
+
+  /* localStorage.setItem("selectedShirt", product) */
+
+/*   useEffect(()=>{
+      product = localStorage.getItem("selectedShirt")
+  },[])
+ */
+
   const enableAddtoCart = () => {
     setAddToCartDisabled(false);
   };
-  const selectSize = (size)=>{
-   
-    /* e.classList.add("size-selected") */
-  }
-
- 
 
   return (
     <div className="product-display">
       <div className="product-display-left">
         <div className="product-display-img-list">
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
+      {/*     <img src={product.img} alt="" />
+          <img src={product.img} alt="" />
+          <img src={product.img} alt="" />
+          <img src={product.img} alt="" /> */}
         </div>
         <div className="product-display-img">
-          <img className="product-display-main-img" src={product.image} alt="" />
+          <img className="product-display-main-img" id="product-display-main-img" src={product.silueta} alt="" />
         </div>
       </div>
       <div className="product-display-right">
-        <h2>{product.name}</h2>
-        {<div className="product-display-right-stars">
-          {/* imágenes */}{/* ✔ ✔ ✔ ✖ ✖<p>{112}</p> */}
-        </div>}
+        <h2>{product.nombre}</h2>
+
         <div className="product-display-right-prices">
-            {/* <div className="product-display-right-price-old">${product.oldPrice}</div> */}
-            <div className="product-display-right-price-new">{`$ ${product.newPrice}.000`}</div>
+            <div className="product-display-right-price-new">{`$ ${product.precio}.000`}</div>
 
         </div>
         <div className="product-display-right-description">
@@ -68,17 +72,10 @@ function ProductDisplay(props) {
                 setSize("XXl") }}>XXL</div>
             </div>
         </div>
-        {/* <div className="product-display-right-amount"> 
-          
-          <button onClick={deleteProduct}>-</button><span>{amount}</span><button onClick={addProduct}>+</button>
-        </div> */}
          <button className="add-to-cart" onClick={() => addToCart(product.id, size,product)} disabled={isAddToCartDisabled}>
           Añadir al carrito
         </button>
-        {/* <p className="productd-isplay-right-caregory"><span>Etiquetas: <span>women, T-shirt, Cop Top</span></span></p>
-        <p className="product-display-right-caregory"><span>Etiquetas : <span>women, T-shirt, Cop Top</span></span></p>
-        <p className="product-display-right-caregory"><span>Etiquetas : <span>women, T-shirt, Cop Top</span></span></p>
- */}
+
       </div>
     </div>
   );

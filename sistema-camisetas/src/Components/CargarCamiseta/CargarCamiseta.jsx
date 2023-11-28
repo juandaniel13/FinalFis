@@ -7,10 +7,11 @@ export default function CargarCamiseta() {
     const [nombre,setNombre ] = useState("");
     const [silueta,setSilueta ] = useState("");
     const [categoria,setCategoria ] = useState("");
-    const [strock,setStock ] = useState(0);
+    const [Stock,setStock ] = useState(0);
     const [color,setColor ] = useState("");
     const [talla, setTalla] = useState("")
     const [precio, setPrecio] = useState(0)
+    const [editable, setEditable] = useState(true)
 
     const handdleAddProduct = async(e)=>{
 
@@ -20,10 +21,11 @@ export default function CargarCamiseta() {
           nombre,
           silueta,
           categoria,
-          strock,
+          Stock,
           color,
           talla,
-          precio
+          precio,
+          editable,
           /* "codigo_camiseta":12,
           "talla_camiseta":talla,
           "color_camiseta":color,
@@ -81,6 +83,11 @@ export default function CargarCamiseta() {
                     <input type="number"  placeholder="Stock:"  name="" id="" required  onChange={(e)=>setStock(e.target.value)}/>
                     <input type="color" required onChange={(e)=>setColor(e.target.value)}/>
                     <input type="number" placeholder='Precio:'required onChange={(e)=>setPrecio(e.target.value)}/>
+                    <select name="editable" id="" required onChange={(e)=>setEditable(e.target.value)}>
+                        <option value="true" selected>Editable</option>
+                        <option value="false" >No editable</option>
+                    
+                    </select>
                     
                    </div>
                    <div className="agregar-producto">
@@ -88,7 +95,7 @@ export default function CargarCamiseta() {
           nombre,
           silueta,
           categoria,
-          strock,
+          Stock,
           color,
           talla
         })}/>

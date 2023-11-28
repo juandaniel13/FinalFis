@@ -20,7 +20,7 @@ function SingUp() {
   const [password, setPassword] = useState("");
   const [confirmpPssword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
-  const { account, setAccount } = useContext(ShopContext);
+  const { account, setAccount, setToken } = useContext(ShopContext);
 
   const handleNombreChange = (e) => {
     setPerson({
@@ -98,7 +98,7 @@ function SingUp() {
       console.log("respuesta de axios", res);
 
       if (res.status >= 200 && res.status < 300) {
-        console.log("Todo bien todo correcto");
+        console.log("Todo bien todo correcto ");
         alert("se ha registrado de forma exitosa");
         return <Navigate to={"/login"}/>
       } else {

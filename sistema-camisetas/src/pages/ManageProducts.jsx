@@ -1,67 +1,40 @@
-import React, { useState } from 'react'
-import AdminOptions from '../Components/AdminOptions/AdminOptions'
-import "./css/ManageProducts.css"
+import React, { useState, useContext } from "react";
+import AdminOptions from "../Components/AdminOptions/AdminOptions";
+import "./css/ManageProducts.css";
 import axios from "axios";
-import CargarCamiseta from '../Components/CargarCamiseta/CargarCamiseta';
-
+import CargarCamiseta from "../Components/CargarCamiseta/CargarCamiseta";
+import UpdateShirt from "../Components/UpdateShirt/UpdateShirt";
+import DeleteProduct from "../Components/DeleteProduct/DeleteProduct";
+import { ShopContext } from "../Context/ShopContext";
 
 function ManageProducts() {
-    /* const [nombre,setNombre ] = useState("");
-    const [silueta,setSilueta ] = useState("");
-    const [categoria,setCategoria ] = useState("");
-    const [strock,setStock ] = useState(0);
-    const [color,setColor ] = useState("");
-    const [talla, setTalla] = useState("")
-    const [precio, setPrecio] = useState(0)
+  const [option, setOption] = useState("cargar");
+  const {product} = useContext(ShopContext)
 
-    const handdleAddProduct = async(e)=>{
 
-    e.preventDefault();
-    try {
-        const res = await axios.post("http://localhost:3000/camisetas", {
-          nombre,
-          silueta,
-          categoria,
-          strock,
-          color,
-          talla,
-          precio
-        });
-  
-        console.log("respuesta de axios", res);
-  
-        if (res.status >= 200 && res.status < 300) {
-          console.log("Todo bien todo correcto");
-          alert("EL producto se ha agregado exitosamente")
-          setNombre("")
-          setSilueta("")
-          setCategoria("")
-          setStock("")
-          setColor("")
-          setTalla("")
-        } else {
-          console.log("Hubo un problema con la solicitud");
-        }
-      } catch (error) {
-        console.error("Error en la solicitud:", error);
-      }
-    };
-    
-    const $imgSelector = document.querySelector(".image-selector")
-    console.log($imgSelector.value)
-    const getImageFromInput = () =>{
-        return 
-    }
- */
-    return (
+  let optionContent = <CargarCamiseta />;
+  if (option == "update") {
+    optionContent = <UpdateShirt product={product}/>;
+  } else if (option == "delete") {
+    optionContent = <DeleteProduct product={product} />;
+  } else if (option == "cargar") {
+    optionContent = <CargarCamiseta />;
+  }
+  return (
     <div className="manage-products">
-        <AdminOptions/>
-        <div className="edit-products">
-            <CargarCamiseta/>
+      <AdminOptions />
+      <div className="edit-products">
+        <div className="product-manager-menu">
+          <ul className="product-manager-menu-content">
+            <li onClick={()=>{setOption("cargar")}}>Cargar Producto</li>
+            <li onClick={()=>{setOption("update")}}>Actualizar Producto</li>
+            <li onClick={()=>{setOption("delete")}}>Elimar un producto</li>
+          </ul>
         </div>
-
+        {optionContent}
+      </div>
     </div>
-  )
-    }
+  );
+}
 
-export default ManageProducts
+export default ManageProducts;

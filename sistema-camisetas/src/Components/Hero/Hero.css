@@ -2,6 +2,7 @@
     height: 100vh;
     background: linear-gradient(180deg, white,#63FFD5 60%);
     display: flex;
+    
 }
 
 .hero-left{
@@ -60,4 +61,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: column wrap;
 }
+ .hero-right img{
+   max-height: 100%;
+} 

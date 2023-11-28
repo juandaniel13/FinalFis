@@ -23,7 +23,7 @@ function Hero() {
         </div>
       </div>
       <div className="hero-right">
-        <img src="https://weworkin.com/cdn/shop/files/KT_LAZKILLS-BK_6770SQ-W.jpg?v=1687804844" height={1010} alt="" />
+        <img src="https://weworkin.com/cdn/shop/files/KT_LAZKILLS-BK_6770SQ-W.jpg?v=1687804844"  alt="" />
       </div>
     </div>
   );

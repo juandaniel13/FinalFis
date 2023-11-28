@@ -1,0 +1,21 @@
+.product-manager-menu-content{
+    margin-top: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    border: thin solid black;
+    padding: 0;
+}
+
+.product-manager-menu-content li {
+    margin-left: 4px;
+    padding: 5px;
+  
+}
+
+
+.product-manager-menu-content li:hover {
+    background-color: #aafad9c9;
+    cursor: pointer;
+
+}
