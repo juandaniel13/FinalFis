@@ -37,7 +37,7 @@ class CamisetaEstampada(BaseModel):
 class Cuenta(BaseModel):
     codigo_cuenta:int
     saldo:int
-    saldo=1000000
+    saldo:int
     
 class Carrito(BaseModel):
     codigo_compra:int

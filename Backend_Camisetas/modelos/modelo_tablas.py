@@ -1,4 +1,4 @@
-from sqlalchemy import Table,Column,Integer,String,ForeignKey,LargeBinary
+from sqlalchemy import Table,Column,Integer,String,ForeignKey
 from config_bd.db import meta,engine
 
 
@@ -38,14 +38,17 @@ Column("codigo_estampa",Integer,ForeignKey('estampa.codigo_estampa'))
 
 cuenta = Table("cuenta",meta,
 Column("codigo_cuenta",Integer,primary_key=True),
-Column("saldo",Integer)
+Column("saldo",Integer),
+Column("codigo_usuario",Integer,ForeignKey('usuario.numero_documento'))
 )
 
 carrito = Table("carrito",meta,
 Column("codigo_compra",Integer,primary_key=True),
-Column("precio_camiseta_estampada",Integer),
 Column("cantidad_camiseta",Integer),
 Column("total",Integer),
+Column("codigo_camiseta_estampada",Integer,ForeignKey('camiseta_estampada.codigo_camiseta_estampada')),
+Column("codigo_cuenta",Integer,ForeignKey('cuenta.codigo_cuenta')),
+Column("numero_documento",Integer,ForeignKey('usuario.numero_documento'))
 )
 
 meta.create_all(engine)

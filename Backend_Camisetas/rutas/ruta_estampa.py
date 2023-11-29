@@ -1,9 +1,7 @@
 from fastapi import APIRouter
 from fastapi.responses import FileResponse
-from config_bd.db import conn 
-from modelos.modelo_tablas import estampa #Tabla usuario
 from esquemas.esquemas import Estampa
-from logica.estampas import  obtener_imagenes
+from logica.estampas import  obtener_imagenes,mostrar_estampa,registrar_estampa
 
 
 estampax = APIRouter()
@@ -11,22 +9,19 @@ estampax = APIRouter()
 
 @estampax.get("/estampas", tags=["Estampa"])
 def inicio():
-    return "Hola Inicio"
+    return "Hola Estampas"
 
 @estampax.get("/estampas/lista",response_model=list[Estampa],tags=["Estampa"])
-def mostrar_estampa():
-    return conn.execute(estampa.select()).fetchall()
+async def mostrar_estampas():
+    mostrar_info=mostrar_estampa()
+    return mostrar_info
 
 @estampax.post("/estampas/register",response_model=list[Estampa], tags=["Estampa"])
-def registrar_estampa( stamp : Estampa):
-    nueva_estampa = {"codigo_estampa": stamp.codigo_estampa ,"nombre_estampa":stamp.nombre_estampa,
-    "categoria_estampa": stamp.categoria_estampa,"autor_estampa":stamp.autor_estampa,
-    "imagen_estampa":stamp.imagen_estampa}
-    resultado = conn.execute(estampa.insert().values( nueva_estampa))
-    print(resultado)
-    return conn.execute(estampa.select().where(estampa.c.codigo_estampa == resultado.lastrowid)).first()
+async def registrar_estampas( stamp : Estampa):
+    mostrar_registro=registrar_estampa(stamp)
+    print(mostrar_registro)
+    return mostrar_registro
 
-#EJEMPLO
 @estampax.get("/imagenes",tags=["Estampa"])
 async def traer_imagen():
     imagen = obtener_imagenes() 
